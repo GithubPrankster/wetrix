@@ -1,0 +1,7 @@
+// Visit https://github.com/ethteck/splat/wiki/Advanced-Reloc for documentation about this file
+// entrypoint relocs
+rom:0x001008 reloc:MIPS_HI16 symbol:main_BSS_START
+rom:0x00100C reloc:MIPS_LO16 symbol:main_BSS_START
+
+rom:0x001010 reloc:MIPS_HI16 symbol:main_BSS_END
+rom:0x001014 reloc:MIPS_LO16 symbol:main_BSS_END
