@@ -27,7 +27,8 @@ options:
   # auto_link_sections: [".data", ".rodata", ".bss"]
 
   symbol_addrs_path:
-    - symbol_addrs.txt
+    - config/us/symbol_addrs.txt
+    - config/us/symbol_addrs_libultra.txt
   reloc_addrs_path:
     - reloc_addrs.txt
 
@@ -62,13 +63,19 @@ segments:
   - name: main
     type: code
     start: 0x1040
-    vram: 0x8000DE20
+    vram: 0x80000440
     follows_vram: entry
     subsegments:
       - [0x1040, rodata]
       - [0x1130, rodata]
       - [0x1160, rodata, 10DC0]
+      - [0x1580, rodata]
       - [0xBCB0, rodata]
+      - [0xE450, rodata]
+      - [0xE560, rodata]
+      - [0xE820, rodata]
+      - [0xE880, rodata]
+      - [0xE9C0, rodata]
       - [0xEA20, data]
       - [0x10DC0, asm] # first real instruction 800101C0
       - [0x50110, asm]

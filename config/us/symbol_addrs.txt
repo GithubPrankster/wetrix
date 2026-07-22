@@ -1,0 +1,11 @@
+// Visit https://github.com/ethteck/splat/wiki/Adding-Symbols for documentation about this file
+
+entrypoint      = 0x80000400; // type:func
+main            = 0x80031DC0; // type:func
+
+Thread_0A_1     = 0x80031EB4; // type:func
+Thread_0A_2     = 0x8003211C; // type:func
+Thread_20       = 0x80031F48; // type:func
+Thread_8004F050 = 0x8004F050; // type:func
+Thread_8005A704 = 0x8005A704; // type:func
+Thread_80060EC8 = 0x80060EC8; // type:func
