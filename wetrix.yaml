@@ -6,7 +6,7 @@ options:
   elf_path: build/wetrix.elf
   base_path: .
   platform: n64
-  compiler: KMC
+  compiler: SN64
 
   # asm_path: asm
   # src_path: src
