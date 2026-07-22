@@ -19,7 +19,6 @@ nonmatchings/
 
 *undefined_funcs_auto.txt
 *undefined_syms_auto.txt
-*symbol_addrs.txt
 
 ctx_includes.c
 ctx.c
