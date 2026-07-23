@@ -3,7 +3,7 @@ It's everyone's favorite water game, and now you can look at why it makes the sy
 
 ## Instructions:
 Add your legally obtained US Wetrix to the base of this repository, rename it to `baserom.z64` and run `splat`.
-European and Japanese versions currently not being looked into.
+European version differs by exactly one byte around the start. JP currently not being looked into.
 
 ## Curiosities
 * Game is in six languages. All related strings are uncompressed.
