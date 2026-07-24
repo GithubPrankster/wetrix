@@ -43,7 +43,7 @@ options:
   data_string_guesser_level: 2
   # libultra_symbols: True
   # hardware_regs: True
-  # gfx_ucode: # one of [f3d, f3db, f3dex, f3dexb, f3dex2]
+  gfx_ucode: f3dex
 segments:
   - name: header
     type: header
@@ -65,19 +65,62 @@ segments:
     start: 0x1040
     vram: 0x80000440
     follows_vram: entry
+    bss_size: 0xAFCC0
     subsegments:
-      - [0x1040, rodata]
+      - [0x1040, rodata, 10DC0]
+      - [0x1080, rodata, 12580]
+
       - [0x1130, rodata]
+
       - [0x1160, rodata, 10DC0]
-      - [0x1580, rodata]
+      - [0x1580, rodata, 12580]
+      - [0x2BF0, rodata, 11D00]
+
       - [0xBCB0, rodata]
+
+      - [0xD4C0, rodata, 12580]
+      - [0xE340, rodata, 50370]
+      - [0xE3A8, rodata, 50E00]
+      - [0xE400, rodata, 51240]
+
       - [0xE450, rodata]
+
+      - [0xE4C0, rodata, 53000]
+      - [0xE500, rodata, 552A0]
+      - [0xE540, rodata, 59F50]
+
       - [0xE560, rodata]
+
+      - [0xE580, rodata, 5A960]
+      - [0xE5C0, rodata, 5AB70]
+      - [0xE600, rodata, 5ADE0]
+      - [0xE6C0, rodata, 5BE20]
+      - [0xE740, rodata, 5D680]
+      - [0xE780, rodata, 5DE90]
+      - [0xE7C0, rodata, 5E660]
+
       - [0xE820, rodata]
-      - [0xE880, rodata]
-      - [0xE9C0, rodata]
-      - [0xEA20, data]
-      - [0x10DC0, asm] # first real instruction 800101C0
+
+      - [0xE840, rodata, 5FF40]
+      - [0xE880, rodata, 603C0]
+      - [0xE8C0, rodata, 625B0]
+
+      - [0xE900, rodata]
+
+      - [0xE9C0, rodata, 63280]
+
+      - [0xEA20, rodata]
+      
+      - [0xEA40, asm, gfx_ucode]
+
+      # PSYQ.LIB
+      - [0x10DC0, asm]
+
+      # PSYQDBG.LIB
+      - [0x11D00, asm]
+
+      # gaem
+      - [0x12580, asm]
       - [0x50110, asm]
       - [0x50370, asm]
       - [0x506F0, asm]
@@ -187,8 +230,16 @@ segments:
       - [0x641A0, asm]
       - [0x64210, asm]
 
-  - type: bin
-    start: 0x64900 # 0x80063D00, probably .data
-    follows_vram: main
+      - [0x64900, data]
+
+      - [0x7CF80, bss]
+
+  - name: rom_data
+    type: bin
+    start: 0x7CF80
+
+  - name: sound_things
+    type: bin
+    start: 0x47DE80
 
   - [0x800000]
